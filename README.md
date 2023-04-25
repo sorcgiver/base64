@@ -1,2 +1,2 @@
 # Base64
-Base64. encrypt / decrypt
+Simple cross-platform library written in C, for encryption/decryption in base64
