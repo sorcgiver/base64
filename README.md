@@ -18,8 +18,8 @@ int data[] = { 1, 2, 3, 4, 5 };
 char* encrypt_data;
 int* decrypt_data;
 unsigned int encrypt_size, decrypt_size;
-base64_encode((unsigned char*)data, sizeof(data), &encrypt_data, &encrypt_size);
-base64_decode(encrypt_data, encrypt_size, (unsigned char*)&decrypt_data, &decrypt_size);
+base64_encode((unsigned char*)data, sizeof(data), &encrypt_data, &encrypt_size);        //encoding in base64
+base64_decode(encrypt_data, encrypt_size, (unsigned char*)&decrypt_data, &decrypt_size);//decoding from base64
 
 printf("encrypt data:\n%s\n\n", encrypt_data);
 printf("decrypt data:\n");
