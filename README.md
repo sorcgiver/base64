@@ -2,6 +2,7 @@
 Simple cross-platform library written in C, for encryption/decryption in base64.
 Minimal code.
 A fixed array is used. The memory is computed and allocated before encoding or decoding.
+official documents: https://datatracker.ietf.org/doc/html/rfc4648
 
 encoding / decoding string
 ```
