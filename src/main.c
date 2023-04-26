@@ -9,13 +9,19 @@
  * 
  */
 int main(int argc, char** argv) {
-    char* data = "Man is distinguished, not only by his reason, but by this singular passion from other animals, which is a lust of the mind, that by a perseverance of delight in the continued and indefatigable generation of knowledge, exceeds the short vehemence of any carnal pleasure.";
-    unsigned char* encrypt_data;
-    unsigned char* decrypt_data;
-    encrypt_data = base64_encode_str(data);
-    decrypt_data = base64_decode_str(encrypt_data);
+    int data[] = { 1, 2, 3, 4, 5 };
+
+    char* encrypt_data;
+    int* decrypt_data;
+    unsigned int encrypt_size, decrypt_size;
+    encrypt_data = base64_encode((unsigned char*) data, sizeof (data), &encrypt_size); //encoding in base64
+    decrypt_data = base64_decode(encrypt_data, encrypt_size, (unsigned char*) &decrypt_size); //decoding from base64
+
     printf("encrypt data:\n%s\n\n", encrypt_data);
-    printf("decrypt data:\n%s\n\n", decrypt_data);
+    printf("decrypt data:\n");
+    for (int i = 0; i < decrypt_size / sizeof (int); i++) {
+        printf("%d ", decrypt_data[i]);
+    }
     free(encrypt_data);
     free(decrypt_data);
     return 0;
@@ -50,8 +56,8 @@ int main(int argc, char** argv) {
     unsigned char* encrypt_data;
     int* decrypt_data;
     unsigned int encrypt_size, decrypt_size, decrypt_int_size;
-    base64_encode((unsigned char*)data, data_size, &encrypt_data, &encrypt_size);
-    base64_decode(encrypt_data, encrypt_size, (unsigned char*)&decrypt_data, &decrypt_size);
+    encrypt_data = base64_encode((unsigned char*)data, data_size, &encrypt_size);
+    decrypt_data = base64_decode(encrypt_data, encrypt_size, &decrypt_size);
     decrypt_int_size = decrypt_size / sizeof(int);
     
     printf("encrypt size: %u\nencrypt data:\n%s\n\n", encrypt_size, encrypt_data);
