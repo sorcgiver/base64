@@ -30,3 +30,5 @@ for (int i = 0; i < decrypt_size / sizeof (int); i++) {
 free(encrypt_data);
 free(decrypt_data);
 ```
+
+for questions please contact: t.me/sorcgiver
