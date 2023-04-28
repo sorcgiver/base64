@@ -50,7 +50,7 @@ extern "C" {
  *      data_in_size -  size input byte array
  *      data_out_size - size output encrypted array base64 without '\0' (you can NULL)
  * RETURN: output encrypted array base64 (malloc)
- * WARNING: do not forget to clear the memory LPdata_out
+ * WARNING: do not forget to clear the memory RETURN
  * 
  * 
  * ======================== decrypt in base64 binary ===========================
@@ -59,7 +59,7 @@ extern "C" {
  *      data_in_size -  size input base64 encrypted array
  *      data_out_size - size output decoded array without '\0' (you can NULL)
  * RETURN: output decoded array (malloc)
- * WARNING: do not forget to clear the memory LPdata_out
+ * WARNING: do not forget to clear the memory RETURN
  * 
  * 
  * ======================== encrypt in base64 string ===========================
