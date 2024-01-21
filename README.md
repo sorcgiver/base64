@@ -31,4 +31,4 @@ free(encrypt_data);
 free(decrypt_data);
 ```
 
-for questions please contact: t.me/sorcgiver
+
